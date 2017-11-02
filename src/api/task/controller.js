@@ -9,7 +9,7 @@ export const create = ({ user, bodymen: { body } }, res, next) =>
     .catch(next)
 
 export const index = ({ querymen: { query, select, cursor } }, res, next) =>
-  Task.find(query, select, cursor)
+  Task.find({ user: user.id, ...query }, select, cursor)
     .populate('user')
     .then((task) => tasks.map((task) => task.view()))
     .then(success(res))
