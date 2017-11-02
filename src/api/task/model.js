@@ -1,11 +1,6 @@
 import mongoose, { Schema } from 'mongoose'
 
 const taskSchema = new Schema({
-  user: {
-    type: Schema.ObjectId,
-    ref: 'User',
-    required: true
-  },
   title: {
     type: String
   },
@@ -27,7 +22,6 @@ taskSchema.methods = {
     const view = {
       // simple view
       id: this.id,
-      user: this.user.view(full),
       title: this.title,
       label: this.label,
       date: this.date,

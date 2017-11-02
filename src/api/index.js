@@ -3,6 +3,7 @@ import user from './user'
 import auth from './auth'
 import passwordReset from './password-reset'
 import task from './task'
+import task from './task'
 
 const router = new Router()
 
@@ -32,6 +33,7 @@ const router = new Router()
 router.use('/users', user)
 router.use('/auth', auth)
 router.use('/password-resets', passwordReset)
+router.use('/tasks', task)
 router.use('/tasks', task)
 
 export default router
