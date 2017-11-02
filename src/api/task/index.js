@@ -34,11 +34,11 @@ router.post('/',
  * @apiName RetrieveTasks
  * @apiGroup Task
  * @apiPermission user
- * @apiParam {String} access_token user access token.
+ * @apiParam {String} access_token User access token.
  * @apiUse listParams
  * @apiSuccess {Object[]} tasks List of tasks.
  * @apiError {Object} 400 Some parameters may contain invalid values.
- * @apiError 401 user access only.
+ * @apiError 401 User access only.
  */
 router.get('/',
   token({ required: true }),
