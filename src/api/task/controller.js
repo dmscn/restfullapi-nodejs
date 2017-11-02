@@ -11,7 +11,7 @@ export const create = ({ user, bodymen: { body } }, res, next) =>
 export const index = ({ querymen: { query, select, cursor }, user }, res, next) =>
   Task.find({ user: user.id, ...query }, select, cursor)
     .populate('user')
-    .then((task) => tasks.map((task) => task.view() : null))
+    .then((task) => tasks.map((task) => task.view()))
     .then(success(res))
     .catch(next)
 
@@ -19,7 +19,7 @@ export const show = ({ params }, res, next) =>
   Task.findById(params.id)
     .populate('user')
     .then(notFound(res))
-    .then((task) => task ? task.view())
+    .then((task) => task ? task.view() : null)
     .then(success(res))
     .catch(next)
 
