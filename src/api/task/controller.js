@@ -19,7 +19,7 @@ export const show = ({ params }, res, next) =>
   Task.findById(params.id)
     .populate('user')
     .then(notFound(res))
-    .then((task) => task ? task.view() : null)
+    .then((task) => task ? task.view())
     .then(success(res))
     .catch(next)
 
